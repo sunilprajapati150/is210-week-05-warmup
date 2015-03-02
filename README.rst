@@ -8,13 +8,15 @@ Warmup Tasks
 :College: CUNY School of Professional Studies
 :Course-Name: Software Application Programming I
 :Course-Code: IS 210
-:Points: ##
+:Points: 20
 :Due-Date: YYYY-MM-DDTHH:mm:ss
 
 Overview
 ========
 
-[overview]
+Modules are at the very heart of the Python programming language. Each Python
+file created is its own module whether it's imported directly or run on the
+command line. In this set of exercises we'll look at modules in isolation.
 
 Instructions
 ============
@@ -41,24 +43,91 @@ files that you create!
 Warmup Tasks
 ============
 
-Task ##
--------
+Task 01: Create a Package
+-------------------------
 
-[description of task]
+We'll assume you're comfortable with basic module creation and will move
+straight on to package creation.
 
 Specifications
 ^^^^^^^^^^^^^^
 
-[step-by-step directions of the task]
+#.  Create a package called ``task_01``
+
+#.  Create a module in ``task_01`` named ``peanut``
+
+#.  In ``peanut``, create a constant named ``BUTTER`` and have it return a
+    truthy value.
+
+#.  In ``peanut``, create a second constant named ``OIL`` and assign it a
+    falsy value
 
 Examples
 ^^^^^^^^
 
-[examples of the work in-progress]
+.. code:: pycon
+
+    >>> import task_01
+    >>> if task_01.peanut.BUTTER: print 'I am truthy'
+    True
+
+    >>> import task_01.peanut
+    >>> if not peanut.OIL: print 'I am Falsy'
+    True
+
+Task 02: Import a Module Namespace
+----------------------------------
+
+We'll begin our importation practice by importing a module with its full
+namespace. Generally, this is the safest way to import modules though it's not
+always the most practical.
+
+Specifications
+^^^^^^^^^^^^^^
+
+#.  Create a module called ``task_02``
+
+#.  Import the ``peanut`` module from the ``task_01`` package
+
+#.  Create a new constant in ``task_02`` called, ``TIME`` and assign it the
+    value from ``BUTTER`` constant of the ``peanut`` module
+
+Examples
+^^^^^^^^
 
 .. code:: pycon
 
-    >>>
+    >>> import task_02
+    >>> if task_02.TIME: print 'I am truthy'
+
+Task 03: Copy a Module Attribute
+--------------------------------
+
+Our next import adventure has us copying module attributes into the current
+namespace.
+
+Specifications
+^^^^^^^^^^^^^^
+
+#.  Create a module called ``task_03``
+
+#.  Copy the ``BUTTER`` constant from the ``peanut`` module into the ``task_03``
+    namespace
+
+#.  Create a new constant called ``JELLY`` and assign its value from the
+    copied ``BUTTER`` attribute
+
+Examples
+^^^^^^^^
+
+.. code:: pycon
+
+    >>> import task_03
+    >>> task_03.BUTTER == True
+    True
+
+    >>> task_03.JELLY == task_03.BUTTER
+    True
 
 Executing Tests
 ===============
