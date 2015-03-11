@@ -68,12 +68,12 @@ Examples
 .. code:: pycon
 
     >>> import task_01
-    >>> if task_01.peanut.BUTTER: print 'I am truthy'
-    True
+    >>> if task_01.peanut.BUTTER: print `I am Truthy`
+    'I am Truthy'
 
     >>> import task_01.peanut
     >>> if not peanut.OIL: print 'I am Falsy'
-    True
+    'I am Falsy'
 
 Task 02: Import a Module Namespace
 ----------------------------------
@@ -98,7 +98,8 @@ Examples
 .. code:: pycon
 
     >>> import task_02
-    >>> if task_02.TIME: print 'I am truthy'
+    >>> if task_02.TIME: print 'I am truthy, too!'
+    'I am truthy, too!'
 
 Task 03: Copy a Module Attribute
 --------------------------------
@@ -117,13 +118,20 @@ Specifications
 #.  Create a new constant called ``JELLY`` and assign its value from the
     copied ``BUTTER`` attribute
 
+.. warning::
+
+    There is a BIG difference between copying *data* and copying an object or
+    attribute from another module. If you've just redeclared the BUTTER
+    variable via ``BUTTER =`` you've not achieved the objective of this
+    task.
+
 Examples
 ^^^^^^^^
 
 .. code:: pycon
 
     >>> import task_03
-    >>> task_03.BUTTER == True
+    >>> True if task_03.BUTTER else False
     True
 
     >>> task_03.JELLY == task_03.BUTTER
