@@ -70,7 +70,7 @@ Examples
     'I am Truthy'
 
     >>> import task_01.peanut
-    >>> if not peanut.OIL: print 'I am Falsy'
+    >>> if not task_01.peanut.OIL: print 'I am Falsy'
     'I am Falsy'
 
 Task 02: Import a Module Namespace
