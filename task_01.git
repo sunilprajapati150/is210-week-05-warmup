@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""A really good docstring."""
+
+def peanut():
+    
+    BUTTER = 'I am Truthy'
+    return
+
+    OIL = 'I am Falsly'
+    return
